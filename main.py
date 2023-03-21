@@ -1,3 +1,6 @@
+import random
+
+
 class Element:
     def __init__(self):
         self.val = 0
@@ -20,8 +23,15 @@ class Board:
             for y in range(0, 4):
                 self.board[y].append(Element())
                 self.prevBoard[y].append(Element())
+
+    #randomize a new element (value of 2 or 4) into the empty spaces
     def randomizeElement(self):
-        pass
+        x = random.randint(0, 3)
+        y = random.randint(0, 3)
+        while self.board[x][y].getVal() != 0:
+            x = random.randint(0, 3)
+            y = random.randint(0, 3)
+        self.board[x][y].setVal(random.randint(1, 2)*2)
     def right(self):
         pass
     def left(self):
