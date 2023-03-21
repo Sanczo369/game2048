@@ -104,9 +104,12 @@ class Board:
                     return True
         return False
     def getTable(self):
-        pass
+        return self.board
+
     def copyTable(self):
-        pass
+        for x in range(0, 4):
+            for y in range(0, 4):
+                self.prevBoard[y][x].setVal(self.board[y][x].getVal())
 class Game:
     def __init__(self):
         pass
