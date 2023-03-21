@@ -1,5 +1,5 @@
 import random
-
+import pygame
 
 class Element:
     def __init__(self):
@@ -112,7 +112,12 @@ class Board:
                 self.prevBoard[y][x].setVal(self.board[y][x].getVal())
 class Game:
     def __init__(self):
-        pass
+        pygame.init()
+        self.screen = pygame.display.set_mode([400, 400])
+        pygame.display.set_caption("Gra 2048")
+        pygame.font.init()
+        self.myfont30 = pygame.font.SysFont("ComicSans", 30)
+        self.myfont45 = pygame.font.SysFont("ComicSans", 45)
     def draw(self, table):
         pass
     def run(self, board):
