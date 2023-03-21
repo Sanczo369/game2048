@@ -12,8 +12,14 @@ class Element:
         return self.val
 
 class Board:
+    #initialization 4x4 board
     def __init__(self):
-        pass
+        self.board = [[], [], [], []]
+        self.prevBoard = [[], [], [], []]
+        for x in range(0, 4):
+            for y in range(0, 4):
+                self.board[y].append(Element())
+                self.prevBoard[y].append(Element())
     def randomizeElement(self):
         pass
     def right(self):
