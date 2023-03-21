@@ -159,7 +159,9 @@ class Game:
 
 
 def main():
-    pass
+    board = Board()
+    game = Game()
+    game.run(board)
 
 
 if __name__ == '__main__':
