@@ -1,4 +1,5 @@
 import random
+import sys
 import pygame
 
 class Element:
@@ -128,7 +129,33 @@ class Game:
                 self.screen.blit(text, (x*100+20, y*75+100))
         pygame.display.flip()
     def run(self, board):
-        pass
+        board.randomizeElement()
+        while True:
+            self.draw(board.getTable())
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_UP:
+                        if board.up():
+                            board.randomizeElement()
+                    elif event.key == pygame.K_DOWN:
+                        if board.down():
+                            board.randomizeElement()
+                    elif event.key == pygame.K_LEFT:
+                        if board.left():
+                            board.randomizeElement()
+                    elif event.key == pygame.K_RIGHT:
+                        if board.right():
+                            board.randomizeElement()
+                    elif event.key == pygame.K_z:
+                        for x in range(0, 4):
+                            for y in range(0, 4):
+                                board[y][x].setVal(self.prevBoard[y][x].getVal())
+                    elif event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
 
 
 def main():
