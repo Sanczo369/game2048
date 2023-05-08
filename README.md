@@ -14,3 +14,8 @@ In this project I used modules:
 - __pygame__ (pygame is a Python wrapper for the SDL library, which stands for Simple DirectMedia Layer. SDL provides cross-platform access to your system's underlying multimedia hardware components, such as sound, video, mouse, keyboard, and joystick)
 
 To use pygame modules, you need to install it by typing in the console __pip install pydub__.
+
+I divided the project into 3 classes:
+- Element
+- Board
+- Game
